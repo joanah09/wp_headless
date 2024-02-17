@@ -19,6 +19,10 @@ module.exports = {
         port,
         pathname: `${pathname}/**`,
       },
+      { // Add this block to whitelist 1.gravatar.com
+        protocol: 'http', // or 'https' depending on Gravatar's protocol
+        hostname: '1.gravatar.com',
+      },
     ],
   },
 };
