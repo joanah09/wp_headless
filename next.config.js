@@ -9,6 +9,8 @@ const { protocol, hostname, port, pathname } = new URL(
   process.env.WORDPRESS_API_URL,
 );
 
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 module.exports = {
   images: {
@@ -23,6 +25,13 @@ module.exports = {
         protocol: 'http', // or 'https' depending on Gravatar's protocol
         hostname: '1.gravatar.com',
       },
+      { // Add this block to whitelist secure.gravatar.com
+        protocol: 'https', // Gravatar uses HTTPS
+        hostname: 'secure.gravatar.com',
+      },
     ],
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
   },
 };
