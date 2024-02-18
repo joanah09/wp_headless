@@ -1,3 +1,10 @@
 .container {
-    background: red;
+    padding: 1em;
+    color: #fff;
+    text-align: center;
+    background: teal;
+    h1 {
+        font-size: 32px;
+        padding-bottom: 1em;
+    }
 }
